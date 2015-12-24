@@ -4,7 +4,7 @@ git fetch origin \
 && git rev-list --left-right `git branch -a | grep "^\*" | cut -c 3-`...origin/master -- 2>/dev/null >/tmp/git_upstream_status_delta \
 && RIGHT_AHEAD=$(grep -c '^>' /tmp/git_upstream_status_delta) \
 && [ "$RIGHT_AHEAD" -ne "0" ] \
-&& echo "Your branch is $RIGHT_AHEAD commits behind origin/master"
+&& echo "Your branch is $RIGHT_AHEAD commits behind origin/master" \
 && exit 2
 
 ### First, fetch all the origin branch info
